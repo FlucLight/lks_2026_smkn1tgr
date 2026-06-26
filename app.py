@@ -35,9 +35,9 @@ with col_kiri:
 
     education_label = st.selectbox(
         "Tingkat Pendidikan",
-        options=["SD", "SMP", "SMA / SMK", "D3 / Diploma", "S1 ke atas"]
+        options=["SMP", "SMA / SMK", "D3 / Diploma", "S1 ke atas", "Lulusan Terakhir"]
     )
-    education_map = {"SD": 1, "SMP": 2, "SMA / SMK": 3, "D3 / Diploma": 4, "S1 ke atas": 5}
+    education_map = {"SMP": 1, "SMA / SMK": 2, "D3 / Diploma": 3, "S1 ke atas": 4, "Lulusan Terakhir": 5}
     education = education_map[education_label]
 
     initial_capital_label = st.radio(
@@ -104,7 +104,7 @@ with col_kanan:
     professional_advice = st.slider(
         "Akses ke Mentor / Konsultan Bisnis",
         min_value=1, max_value=7, value=1,
-        help="1 = Tidak ada akses, 7 = Akses sangat baik"
+        help="1 = Tidak pernah, 2 = Hampir tidak pernah, 3 = jarang, 4 = Kadang Kadang, 5 = Sering, 6 = sangat sering  7 = Selalu"
     )
 
 st.divider()
