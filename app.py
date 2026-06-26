@@ -8,7 +8,7 @@ st.set_page_config(page_title="Prediksi UMKM LKS", layout="centered")
 
 @st.cache_resource
 def load_model():
-    return joblib.load('model_umkm_xgboost')
+    return joblib.load('model_umkm1')
 
 model = load_model()
 
@@ -19,7 +19,6 @@ feature_names = [
     'Owner_Gender', 'Professional_Advice'   
 ]
 
-# ── Header ───────────────────────────────────────────────────────────────────
 st.title("Prediksi Peluang Keberhasilan UMKM")
 st.write(
     "Isi profil usaha Anda di bawah ini untuk mengetahui peluang keberhasilan "
@@ -27,7 +26,6 @@ st.write(
 )
 st.divider()
 
-# ── Form Input ───────────────────────────────────────────────────────────────
 st.subheader("Profil Pelaku Usaha")
 
 col_kiri, col_kanan = st.columns(2)
@@ -111,7 +109,6 @@ with col_kanan:
 
 st.divider()
 
-# ── Tombol Prediksi ───────────────────────────────────────────────────────────
 prediksi_btn = st.button(
     "Prediksi Peluang Keberhasilan",
     type="primary",
@@ -145,7 +142,6 @@ if prediksi_btn:
 
     st.divider()
 
-    # ── Feature Importance ────────────────────────────────────────────────────
     st.subheader("Faktor yang Paling Berpengaruh")
 
     try:
@@ -173,7 +169,6 @@ if prediksi_btn:
 
     st.divider()
 
-    # ── Saran Otomatis ────────────────────────────────────────────────────────
     st.subheader("Saran untuk Meningkatkan Peluang Keberhasilan")
 
     saran = []
