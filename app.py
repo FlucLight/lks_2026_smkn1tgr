@@ -34,10 +34,10 @@ with col_kiri:
     age = st.slider("Usia Pemilik (tahun)", min_value=18, max_value=65, value=30)
 
     education_label = st.selectbox(
-        "Tingkat Pendidikan",
-        options=["SMP", "SMA / SMK", "D3 / Diploma", "S1 ke atas", "Lulusan Terakhir"]
+        "Lulusan Terakhir",
+        options=["SD", "SMP", "SMA / SMK", "D3 / Diploma", "S1 ke atas"]
     )
-    education_map = {"SMP": 1, "SMA / SMK": 2, "D3 / Diploma": 3, "S1 ke atas": 4, "Lulusan Terakhir": 5}
+    education_map = {"SD": 1, "SMP": 2, "SMA / SMK": 3, "D3 / Diploma": 4, "S1 ke atas": 5}
     education = education_map[education_label]
 
     initial_capital_label = st.radio(
@@ -72,7 +72,7 @@ with col_kanan:
     marketing = st.slider(
         "Intensitas Upaya Pemasaran",
         min_value=1, max_value=7, value=4,
-        help="1 = Sangat Rendah, 7 = Sangat Tinggi"
+        help="1 = Tidak melakukan pemasaran, 2 = hampir tidak melakukan pemasaran, 3 = sedikit, 4 = kadang, 5 = sering, 6 = sangat sering 7 = selalu melakukan"
     )
 
     partnership_label = st.radio(
